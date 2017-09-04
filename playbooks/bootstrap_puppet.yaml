@@ -32,7 +32,7 @@
       src: files/puppet/r10k.yaml
       dest: /etc/puppetlabs/r10k/r10k.yaml
   - name: push checked out git repository to the location puppet expects
-    command: git push /var/lib/puppet/puppet.git {{ puppet_environment }}
+    command: git push /var/lib/puppet/puppet.git {{ current_branch }}:{{ puppet_environment }}
     become: true
     become_user: puppet
     register: git_push
