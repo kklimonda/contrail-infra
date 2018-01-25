@@ -48,9 +48,11 @@ node /ze\d+(-dev|-jnpr)?.opencontrail.org/ {
 node /repo\d+(-dev|-jnpr)?.opencontrail.org/ {
   class { '::opencontrail_ci::server': }
   class { '::opencontrail_ci::pulp_repo': }
+  class { '::opencontrail_ci::pulp_public_repo': }
 }
 
 node /ci-repo.englab.juniper.net/ {
   class { '::opencontrail_ci::server': }
-  class { '::opencontrail_ci::pulp_repo': }
+  class { '::opencontrail_ci::pulp_server': }
+  class { '::opencontrail_ci::pulp_ci_repo': }
 }
